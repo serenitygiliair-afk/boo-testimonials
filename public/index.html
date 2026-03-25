@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Breath of Oneness – Share Your Experience</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- Hero -->
+    <header class="hero">
+      <div class="logo-mark">✦</div>
+      <h1>Share Your Experience</h1>
+      <p class="subtitle">Your words help others find their way to healing.<br>Take a moment to share how Breath of Oneness moved you.</p>
+    </header>
+
+    <!-- Step 1: Info -->
+    <section class="card" id="step-info">
+      <h2>First, tell us who you are</h2>
+      <div class="field">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" placeholder="First and last name" autocomplete="name" />
+      </div>
+      <div class="field">
+        <label for="email">Your Email <span class="optional">(kept private)</span></label>
+        <input type="email" id="email" placeholder="you@example.com" autocomplete="email" />
+      </div>
+      <div class="field">
+        <label for="textFeedback">Any written thoughts? <span class="optional">(optional)</span></label>
+        <textarea id="textFeedback" rows="3" placeholder="A few words about your experience…"></textarea>
+      </div>
+      <button class="btn-primary" id="btn-next">Continue →</button>
+    </section>
+
+    <!-- Step 2: Record -->
+    <section class="card hidden" id="step-record">
+      <h2>Record your testimonial</h2>
+
+      <div class="toggle-row">
+        <button class="toggle active" id="btn-video" data-type="video">
+          <span class="icon">🎥</span> Video
+        </button>
+        <button class="toggle" id="btn-audio" data-type="audio">
+          <span class="icon">🎙️</span> Audio only
+        </button>
+      </div>
+
+      <!-- Video preview -->
+      <div class="preview-wrap" id="video-wrap">
+        <video id="preview" autoplay muted playsinline></video>
+        <div class="rec-badge hidden" id="rec-badge">● REC</div>
+      </div>
+
+      <!-- Audio visualizer -->
+      <div class="audio-wrap hidden" id="audio-wrap">
+        <canvas id="visualizer"></canvas>
+        <div class="rec-badge hidden" id="rec-badge-audio">● REC</div>
+      </div>
+
+      <div class="record-controls">
+        <button class="btn-record" id="btn-record">
+          <span class="dot"></span> Start Recording
+        </button>
+        <button class="btn-stop hidden" id="btn-stop">⏹ Stop</button>
+      </div>
+
+      <div class="playback hidden" id="playback">
+        <p class="playback-label">Preview your recording</p>
+        <video id="playback-video" controls></video>
+        <audio id="playback-audio" controls class="hidden"></audio>
+        <div class="playback-actions">
+          <button class="btn-secondary" id="btn-retake">↩ Re-record</button>
+          <button class="btn-primary" id="btn-submit">Submit ✦</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 3: Success -->
+    <section class="card hidden" id="step-success">
+      <div class="success-icon">✦</div>
+      <h2>Thank you so much!</h2>
+      <p>Your testimonial has been received. It truly means the world and will help others step into their healing journey.</p>
+      <p class="breath">Breathe easy. 🌿</p>
+    </section>
+
+    <!-- Loading overlay -->
+    <div class="overlay hidden" id="overlay">
+      <div class="spinner"></div>
+      <p>Uploading your testimonial…</p>
+    </div>
+
+    <!-- Error toast -->
+    <div class="toast hidden" id="toast"></div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

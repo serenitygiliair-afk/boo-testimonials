@@ -1,0 +1,10 @@
+node_modules/
+.env
+uploads/
+*.json
+!package.json
+!package-lock.json
+*.mp4
+*.webm
+*.mp3
+*.wav
