@@ -105,6 +105,9 @@ async function sendToGHL(name, email, driveLink, textFeedback) {
   return contactId;
 }
 
+// Ping endpoint (keeps free tier awake)
+app.get('/ping', (req, res) => res.json({ ok: true }));
+
 // Upload endpoint
 app.post('/upload', upload.single('recording'), async (req, res) => {
   const { name, email, textFeedback, recordingType } = req.body;

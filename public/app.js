@@ -1,3 +1,6 @@
+// Wake the server as soon as the page loads (prevents free-tier spin-down delay)
+fetch('/ping').catch(() => {});
+
 (() => {
   // ── State ──
   let stream = null;
